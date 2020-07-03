@@ -40,9 +40,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="less" scoped>
+@bg:#ffc3d2;
 h3 {
   margin: 40px 0 0;
+  background: @bg;
 }
 ul {
   list-style-type: none;
