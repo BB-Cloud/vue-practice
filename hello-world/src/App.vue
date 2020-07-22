@@ -1,18 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    {{message}}
+    <!-- <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    // HelloWorld
+  },
+  mounted() {
+    setTimeout(() => {
+      this.test();
+    }, 3000);
+  },
+  data() {
+    return {
+      message: '12345',
+    }
+  },
+  methods: {
+    test() {
+      this.message = 'new message';
+      console.log(this.$el.textContent);
+      this.$nextTick(function () {
+        console.log(this.$el.textContent)
+      })
+    },
+  },
 }
 </script>
 
