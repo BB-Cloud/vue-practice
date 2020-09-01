@@ -18,6 +18,9 @@ export default {
     setTimeout(() => {
       this.test();
     }, 3000);
+    console.log(this.$store.state.count)
+    this.$store.commit('increment')
+    console.log(this.$store.state.count)
   },
   data() {
     return {
